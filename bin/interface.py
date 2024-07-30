@@ -15,11 +15,12 @@ def interface():
             save_img = gr.Button('Download image')
 
             get_apod_button.click(get_apod, inputs=[count], outputs=[image_data, image])
+            save_img.click(save_data, inputs=image, outputs=None)
 
         with gr.Tab('Asteroids', 'Search Asteroids'):
             gr.Markdown('Search for asteroids using NASA API.')
             asteroids_data = gr.Text('text', type='text', label='Asteroids Data')
-            asteroid_img = gr.Image('image', type='pil', label='Asteroid Image')
+            search_button = gr.Button('Search Asteroids')
             save_button = gr.Button('Save Data')
 
         with gr.Tab('Plot', 'Create Plot'):
