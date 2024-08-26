@@ -3,12 +3,15 @@
 ## Description
 
 This is a simple web application that uses the NASA API to display images from the NASA database.
+The application is built using Python and the Gradio library.
 The interface has 3 tabs:
 
 - The first tab gets you a random image or more from the NASA database.
 - The second tab gets you some data about the asteroids that are near the Earth.
 
 ## Requirements
+
+NASA API key: You need to have a NASA API key to run this project. You can get one from the [NASA API website](https://api.nasa.gov/)
 
 python >= 3.9
 
@@ -38,7 +41,7 @@ python ./interface.py
 ```
 
 The application will open in your default browser.
-![NASA_IMG](../data/readme/NASA_IMG.PNG)
+![NASA_IMG](./data/readme/NASA_IMG.PNG)
 
 ## License
 
