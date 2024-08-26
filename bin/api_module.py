@@ -5,6 +5,7 @@ import time
 import json
 import csv
 import matplotlib.pyplot as plt
+from PIL import Image
 
 load_dotenv()
 NASA_KEY = os.getenv("NASA_KEY")
@@ -22,7 +23,7 @@ def get_apod(count, download=False):
                 path = f"../data/APOD/apod_{time.time()}.jpg"
                 download_image(url, path)
         
-        return data
+        return data, Image.open(path)
     except requests.RequestException as e:
         print(f"Error fetching APOD data: {e}")
         return None
@@ -105,7 +106,7 @@ def search_mars_rover_photos(rover_name, sol=1000):
         return None
 
 def main():
-    apod_data = get_apod(4, True)
+    apod_data = get_apod(1, False)
     asteroid_data = search_asteroids()
     mars_rover_data = search_mars_rover_photos('curiosity')
 

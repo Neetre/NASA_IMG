@@ -9,22 +9,22 @@ def interface():
         with gr.Tab('APOD', 'Get Astronomy Picture of the Day'):
             gr.Markdown('Get the Astronomy Picture of the Day from NASA.')
             count = gr.Slider(minimum=1, maximum=10, value=1, label='Number of images')
+            # save_img = gr.Checkbox(label='Download')
             get_apod_button = gr.Button('Get APOD')
             image_data = gr.Text('text', type='text', label='APOD Data')
             image = gr.Image('image', type='pil', label='APOD Image')
-            save_img = gr.Button('Download image')
+            
 
-            get_apod_button.click(get_apod, inputs=[count], outputs=[image_data, image])
-            save_img.click(save_data, inputs=image, outputs=None)
+            get_apod_button.click(get_apod, inputs=[count, True], outputs=[image_data, image])
 
         with gr.Tab('Asteroids', 'Search Asteroids'):
-            gr.Markdown('Search for asteroids using NASA API.')
+            gr.Markdown('Search for asteroids using NASA API. COOMING SOON')
             asteroids_data = gr.Text('text', type='text', label='Asteroids Data')
             search_button = gr.Button('Search Asteroids')
             save_button = gr.Button('Save Data')
 
         with gr.Tab('Plot', 'Create Plot'):
-            gr.Markdown('Create a plot using NASA data.')
+            gr.Markdown('Create a plot using NASA data. COOMING SOON')
             gr.Image('plot', type='pil', label='Plot')
             save_button = gr.Button('Save Plot')
 
